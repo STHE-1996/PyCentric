@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My JavaScript App</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">PyCentric</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">Logo</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="#">HOME</a></li>
+          <li>
+            <a href="#">HTML & CSS</a>
+            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            <ul class="htmlCss-sub-menu sub-menu">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Login Forms</a></li>
+              <li><a href="#">Card Design</a></li>
+              <li class="more">
+                <span><a href="#">More</a>
+                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                </span>
+                <ul class="more-sub-menu sub-menu">
+                  <li><a href="#">Neumorphism</a></li>
+                  <li><a href="#">Pre-loader</a></li>
+                  <li><a href="#">Glassmorphism</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">JAVASCRIPT</a>
+            <i class='bx bxs-chevron-down js-arrow arrow '></i>
+            <ul class="js-sub-menu sub-menu">
+              <li><a href="#">Dynamic Clock</a></li>
+              <li><a href="#">Form Validation</a></li>
+              <li><a href="#">Card Slider</a></li>
+              <li><a href="#">Complete Website</a></li>
+            </ul>
+          </li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">CONTACT US</a></li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <ol id="carouselIndicators" class="carousel-indicators"></ol>
+    <div id="carouselInner" class="carousel-inner"></div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+     <!-- togglerDropdown -->
+     <div class="container-fluid my-4 p-3">
+      <div class="dropdown">
+        <button onclick="toggleDropdown('categoryDropdown')" class="dropbtn">Choose a category</button>
+        <div id="categoryDropdown" class="dropdown-content">
+          <a href="#" data-value="CAR">CAR</a>
+          <a href="#" data-value="DEVICE">DEVICE</a>
+          <a href="#" data-value="CLOTHES">CLOTHES</a>
+          <a href="#" data-value="FOOD">FOOD</a>
+        </div>
+      </div>
+    
+      <!-- Dropdown for price range -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('pricingDropdown')" class="dropbtn">Select Price Range</button>
+        <div id="pricingDropdown" class="dropdown-content">
+          <a href="#" data-value="0-500">Under R500</a>
+          <a href="#" data-value="500-1000">R500 - R1000</a>
+          <a href="#" data-value="1000-1500">R1000 - R1500</a>
+          <a href="#" data-value="1500+">Over R1500</a>
+        </div>
+      </div>
+      <button id="filterBtn" class="dropbtn">FILTER</button>
+    </div>
+
+    <!-- List of product -->
+    <div class="container-fluid bg-transparent my-4 p-3" style="position: relative">
+      <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3" id="product-list">
+          <!-- Product cards will be inserted here -->
+      </div>
+  </div>
+  <div class="container my-5">
+    <div class="container my-5">
+      <footer style="background-color: #deded5;">
+        <div class="container p-4">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4">
+              <h5 class="mb-3" style="letter-spacing: 2px; color: #ffcc00;">About Us</h5>
+              <p style="color: #ffcc00;">
+                At PyCentric, we believe in delivering quality and excellence through every product we offer. Founded in [Year], our mission has always been to provide our customers with exceptional products that enhance their lives and meet their needs.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5 class="mb-3" style="letter-spacing: 2px; color: #ffcc00;">Details</h5>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-1">
+                  <a href="#!" style="color: #ffcc00; text-decoration: none;">sthembisobuthelezi774@gmail.com</a>
+                </li>
+                <li class="mb-1">
+                  <a href="#!" style="color: #ffcc00; text-decoration: none;">0636015960</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5 class="mb-1" style="letter-spacing: 2px; color: #ffcc00;">Opening Hours</h5>
+              <table class="table" style="color: #ffcc00; border-color: #ffcc00;">
+                <tbody>
+                  <tr>
+                    <td>Mon - Fri:</td>
+                    <td>8am - 9pm</td>
+                  </tr>
+                  <tr>
+                    <td>Sat - Sun:</td>
+                    <td>8am - 1am</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+  </div>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- Modal  -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <section class="h-100">
+        <div class="container h-100 py-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-10">
+      
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-normal mb-0">Shopping Cart</h3>
+                <div>
+                  <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
+                        class="fas fa-angle-down mt-1"></i></a></p>
+                </div>
+              </div>
+              <div class="card rounded-3 mb-4">
+                <div class="card-body p-4">
+                  <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                        class="img-fluid rounded-3" alt="Cotton T-shirt">
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3">
+                      <p class="lead fw-normal mb-2">Basic T-shirt</p>
+                      <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        <i class="fas fa-minus"></i>
+                      </button>
+      
+                      <input id="form1" min="0" name="quantity" value="2" type="number"
+                        class="form-control form-control-sm" />
+      
+                      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                      <h5 class="mb-0">$499.00</h5>
+                    </div>
+                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                      <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="confirmCheckoutBtn">Confirm Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PyCentric</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fff;
+    }
+    .loader-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Stack items vertically */
+      background-color: #fff;
+      z-index: 1000;
+    }
+    .loader {
+      border: 8px solid #f3f3f3; /* Light grey */
+      border-top: 8px solid #ffc116; /* Yellow */
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .loader-logo {
+      margin-top: 20px; /* Adjust spacing between loader and logo */
+      width: 150px; /* Adjust the width of the logo as needed */
+      height: auto; /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <img src="https://firebasestorage.googleapis.com/v0/b/ziontimeline.appspot.com/o/PyCentric.png?alt=media&token=3b21258b-1d76-4043-97bb-7bae46d3a6e8" alt="Logo" class="loader-logo">
+  </div>
+  <script>
+    // Redirect to the main page after 3 seconds
+    setTimeout(() => {
+      window.location.href = 'index.html'; // Change this to the path of your main page
+    }, 3000);
+  </script>
+</body>
+</html>
