@@ -2,7 +2,6 @@
 // search-box open close js code
 let navbar = document.querySelector(".navbar");
 let searchBox = document.querySelector(".search-box .bx-search");
-// let searchBoxCancel = document.querySelector(".search-box .bx-x");
 
 searchBox.addEventListener("click", ()=>{
   navbar.classList.toggle("showInput");
@@ -467,26 +466,20 @@ const data = [
 // Function to apply filters
 function applyFilters() {
   const filteredProducts = data[0].products.filter(product => {
-    // Check if the product matches the selected category
     let matchesCategory = !selectedCategory || selectedCategory === 'Choose a category' || product.productEnums === selectedCategory;
-
-    // Check if the product matches the selected price range
     let matchesPrice = !selectedPriceRange || selectedPriceRange === 'Select Price Range' || (
       parseInt(product.price, 10) >= parseInt(selectedPriceRange.split('-')[0], 10) &&
       (selectedPriceRange.split('-')[1] === '+' || parseInt(product.price, 10) <= parseInt(selectedPriceRange.split('-')[1], 10))
     );
-
     return matchesCategory && matchesPrice;
   });
-
-  // Generate product cards with the filtered products
   generateProductCards(filteredProducts);
 }
 
 // Function to generate product cards
 function generateProductCards(products) {
   const container = document.getElementById('product-list');
-  container.innerHTML = ''; // Clear existing content
+  container.innerHTML = '';
 
   products.forEach(product => {
     const cardHTML = `
@@ -544,7 +537,7 @@ document.querySelectorAll('#categoryDropdown a').forEach(link => {
     event.preventDefault();
     selectedCategory = this.getAttribute('data-value');
     document.querySelector('#categoryDropdown .dropbtn').textContent = this.textContent;
-    closeDropdowns(); // Ensure dropdowns close
+    closeDropdowns(); 
   });
 });
 
@@ -554,7 +547,7 @@ document.querySelectorAll('#pricingDropdown a').forEach(link => {
     event.preventDefault();
     selectedPriceRange = this.getAttribute('data-value');
     document.querySelector('#pricingDropdown .dropbtn').textContent = this.textContent;
-    closeDropdowns(); // Ensure dropdowns close
+    closeDropdowns();
   });
 });
 
@@ -574,7 +567,6 @@ generateProductCards(data[0].products);
 
 // Function to handle "add to cart" button click and show the checkout modal
 function showCheckoutModal() {
-  // Use Bootstrap's modal method to show the modal
   var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
   checkoutModal.show();
 }
@@ -582,8 +574,8 @@ function showCheckoutModal() {
 // Event listener for the checkout button
 document.querySelectorAll('.btn-warning.bold-btn').forEach(btn => {
   btn.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link behavior
-    showCheckoutModal(); // Show the checkout modal
+    event.preventDefault(); 
+    showCheckoutModal(); 
   });
 });
 
@@ -600,14 +592,7 @@ document.getElementById('confirmCheckoutBtn').addEventListener('click', function
     return;
   }
 
-  // Perform the checkout operation (e.g., send data to server)
-  // For demonstration, just log the data
-  console.log('Checkout Information:', {
-    name,
-    email,
-    address,
-    phone
-  });
+
 
   // Hide the modal after successful checkout
   var checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
