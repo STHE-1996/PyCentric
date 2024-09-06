@@ -1,5 +1,5 @@
 
-// search-box open close js code
+// ===========search-box open close js code==========
 let navbar = document.querySelector(".navbar");
 let searchBox = document.querySelector(".search-box .bx-search");
 
@@ -12,7 +12,7 @@ searchBox.addEventListener("click", ()=>{
   }
 });
 
-// sidebar open close js code
+// ============sidebar open close js code=======
 let navLinks = document.querySelector(".nav-links");
 let menuOpenBtn = document.querySelector(".navbar .bx-menu");
 let menuCloseBtn = document.querySelector(".nav-links .bx-x");
@@ -24,7 +24,7 @@ navLinks.style.left = "-100%";
 }
 
 
-// sidebar submenu open close js code
+// ============sidebar submenu open close js code============
 let htmlcssArrow = document.querySelector(".htmlcss-arrow");
 htmlcssArrow.onclick = function() {
  navLinks.classList.toggle("show1");
@@ -41,7 +41,7 @@ jsArrow.onclick = function() {
 
 
 
-//Slide show
+//=======Slide show=============
 document.addEventListener('DOMContentLoaded', function() {
   const urls = [
     "https://firebasestorage.googleapis.com/v0/b/ziontimeline.appspot.com/o/suvtrees-003.webp?alt=media&token=1b02009d-72d8-40ec-a2cd-a4d593d72d4b",
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const carouselIndicators = document.getElementById('carouselIndicators');
 
   urls.forEach((url, index) => {
-      // Create carousel item
+      // ===Create carousel item===========
       const itemDiv = document.createElement('div');
       itemDiv.classList.add('carousel-item');
       if (index === 0) itemDiv.classList.add('active');
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
       itemDiv.appendChild(img);
       carouselInner.appendChild(itemDiv);
 
-      // Create carousel indicator
+      // =========Create carousel indicator====
       const indicatorLi = document.createElement('li');
       indicatorLi.setAttribute('data-bs-target', '#carouselExampleIndicators');
       indicatorLi.setAttribute('data-bs-slide-to', index);
@@ -463,7 +463,7 @@ const data = [
   }
 ];
 
-// Function to apply filters
+// =============Function to apply filters===========
 function applyFilters() {
   const filteredProducts = data[0].products.filter(product => {
     let matchesCategory = !selectedCategory || selectedCategory === 'Choose a category' || product.productEnums === selectedCategory;
@@ -476,7 +476,7 @@ function applyFilters() {
   generateProductCards(filteredProducts);
 }
 
-// Function to generate product cards
+//======Function to generate product cards==============
 function generateProductCards(products) {
   const container = document.getElementById('product-list');
   container.innerHTML = '';
@@ -516,14 +516,14 @@ function generateProductCards(products) {
   });
 }
 
-// Function to close dropdowns
+// ========Function to close dropdowns========
 function closeDropdowns() {
   document.querySelectorAll('.dropdown-content').forEach(dropdown => {
     dropdown.classList.remove('show');
   });
 }
 
-// Toggle dropdown visibility
+// ===========Toggle dropdown visibility=================
 document.querySelectorAll('.dropbtn').forEach(btn => {
   btn.addEventListener('click', function() {
     const dropdownContent = this.nextElementSibling;
@@ -531,7 +531,7 @@ document.querySelectorAll('.dropbtn').forEach(btn => {
   });
 });
 
-// Event listeners for category dropdown
+// ===========Event listeners for category dropdown==============
 document.querySelectorAll('#categoryDropdown a').forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault();
@@ -541,7 +541,7 @@ document.querySelectorAll('#categoryDropdown a').forEach(link => {
   });
 });
 
-// Event listeners for price range dropdown
+//================Event listeners for price range dropdown==============
 document.querySelectorAll('#pricingDropdown a').forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault();
@@ -550,54 +550,46 @@ document.querySelectorAll('#pricingDropdown a').forEach(link => {
     closeDropdowns();
   });
 });
-
-// Event listener for filter button
 document.getElementById('filterBtn').addEventListener('click', applyFilters);
 
-// Close dropdowns when clicking outside
+// ==========Close dropdowns when clicking outside=====
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     closeDropdowns();
   }
 }
-
-// Initial rendering of products
 generateProductCards(data[0].products);
 
 
-// Function to handle "add to cart" button click and show the checkout modal
-function showCheckoutModal() {
-  var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+// ================Function to handle "add to cart" button click and show the checkout modal==========
+function showCheckoutModal(product) {
+  const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+  document.getElementById('productImage').src = product.productUrl;
+  document.getElementById('productName').textContent = product.productName;
+  document.getElementById('productPrice').textContent = `R${product.price}`;
+  
   checkoutModal.show();
 }
 
-// Event listener for the checkout button
+// ==========Event listener for the "add to cart" button==========
 document.querySelectorAll('.btn-warning.bold-btn').forEach(btn => {
   btn.addEventListener('click', function(event) {
     event.preventDefault(); 
-    showCheckoutModal(); 
+    
+    // ==============clicked product====================
+    const productCard = btn.closest('.card');
+    const productImage = productCard.querySelector('.card-img-top').src;
+    const productName = productCard.querySelector('.card-title').textContent;
+    const productPrice = productCard.querySelector('.badge').textContent.replace('R', '').trim();
+    
+    const product = {
+      productUrl: productImage,
+      productName: productName,
+      price: productPrice
+    };
+    showCheckoutModal(product); 
   });
 });
 
-// Handle confirm checkout button click
-document.getElementById('confirmCheckoutBtn').addEventListener('click', function() {
-  const name = document.getElementById('customerName').value;
-  const email = document.getElementById('customerEmail').value;
-  const address = document.getElementById('customerAddress').value;
-  const phone = document.getElementById('customerPhone').value;
-  
-  // Simple form validation
-  if (!name || !email || !address || !phone) {
-    alert('Please fill out all fields.');
-    return;
-  }
 
 
-
-  // Hide the modal after successful checkout
-  var checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
-  checkoutModal.hide();
-  
-  // Optionally, clear the form
-  document.getElementById('checkoutForm').reset();
-});

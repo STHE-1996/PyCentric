@@ -40,7 +40,6 @@ nav .navbar{
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  /* background: red; */
   padding: 0 50px;
 }
 .navbar .logo a{
@@ -76,9 +75,7 @@ nav .navbar .links li a{
 .links li:hover .js-arrow{
   transform: rotate(180deg);
   }
-
 nav .navbar .links li .arrow{
-  /* background: red; */
   height: 100%;
   width: 22px;
   line-height: 70px;
@@ -115,7 +112,7 @@ nav .navbar .links li:hover .js-sub-menu{
   line-height: 40px;
 }
 .navbar .links li .htmlCss-more-sub-menu{
-  /* line-height: 40px; */
+  
 }
 .navbar .links li .sub-menu .more-sub-menu{
   position: absolute;
@@ -282,10 +279,8 @@ nav .navbar .links li .sub-menu li{
     display: none;
   }
   .navbar .links li .sub-menu .more span{
-    /* background: red; */
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
   }
 
   .links li .sub-menu .more:hover .more-sub-menu{
@@ -323,21 +318,17 @@ nav .navbar .links li .sub-menu li{
 /* Slide show style  */
 /* ====================================================================================================== */
 .carousel-custom {
-  width: 10%; /* Adjust the width as needed */
-  max-width: 100px; /* Maximum width of the carousel */
-  margin: 0 auto; /* Center the carousel horizontally */
+  width: 10%; 
+  max-width: 100px; 
+  margin: 0 auto; 
 }
-
 .carousel-inner {
-  overflow: hidden; /* Ensures that no content spills outside the container */
+  overflow: hidden; 
 }
-
 .carousel-img {
-  width: 100%; /* Ensure images cover the width of the carousel */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; 
+  height: auto; 
 }
-
-
 /* ================================================================================================= */
 /* End of Slide show style  */
 /* ====================================================================================================== */
@@ -346,7 +337,6 @@ nav .navbar .links li .sub-menu li{
 /* ================================================================================================= */
 /* Dropdown styling */
 /* ====================================================================================================== */
-
 .dropbtn {
   background-color: #ffc116;
   color: white;
@@ -384,11 +374,9 @@ nav .navbar .links li .sub-menu li{
 .show {
   display: block;
 }
-
 /* ================================================================================================= */
 /* End of dropdown styling  */
 /* ====================================================================================================== */
-
 :root {
     --font1: 'Heebo', sans-serif;
     --font2: 'Fira Sans Extra Condensed', sans-serif;
@@ -403,18 +391,15 @@ nav .navbar .links li .sub-menu li{
 
     --label-index: #960796;
     --danger-index: #5bc257;
-/* PAGINATE */
+
     --link-color: #000;
     --link-color-hover: #fff;
     --bg-content-color: #ffcc00;
 
 }
-
 .container-fluid {
     max-width: 1400px;
-
 }
-
 .card {
     background: #fff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
@@ -422,26 +407,21 @@ nav .navbar .links li .sub-menu li{
     border: 0;
     border-radius: 1rem;
 }
-
 .card-img,
 .card-img-top {
     border-top-left-radius: calc(1rem - 1px);
     border-top-right-radius: calc(1rem - 1px);
 }
-
-
 .card h5 {
     overflow: hidden;
     height: 55px;
     font-weight: 300;
     font-size: 1rem;
 }
-
 .card h5 a {
   color: black;
   text-decoration: none;
 } 
-
 .card-img-top {
     width: 100%;
     min-height: 250px;
@@ -449,18 +429,13 @@ nav .navbar .links li .sub-menu li{
     object-fit: contain;
     padding: 30px;
 }
-
 .card h2 {
     font-size: 1rem;
 }
-
-
 .card:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
-
-/* Centered text */
 .label-top {
     position: absolute;
     background-color: var(--label-index);
@@ -473,7 +448,6 @@ nav .navbar .links li .sub-menu li{
     border-radius: 3px;
     text-transform: uppercase;
 }
-
 .top-right {
     position: absolute;
     top: 24px;
@@ -489,19 +463,15 @@ nav .navbar .links li .sub-menu li{
     text-align: center;
     color: white;
 }
-
 .top-right span {
     display: inline-block;
     vertical-align: middle;
-    /* line-height: normal; */
-    /* padding: 0 25px; */
+    
 }
-
 .aff-link {
-    /* text-decoration: overline; */
+    
     font-weight: 500;
 }
-
 .over-bg {
     background: rgba(53, 53, 53, 0.85);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -539,18 +509,17 @@ nav .navbar .links li .sub-menu li{
     border: none;
     text-decoration: none;
     outline: 0;
-    /* box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25); */
     border-radius: 100px;
 }
 .btn-warning:hover {
     background: var(--btnbghover);
     color: var(--btnfontcolorhover);
-    /* box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35); */
+    
 }
 .btn-check:focus + .btn-warning, .btn-warning:focus {
     background: var(--btnbghover);
     color: var(--btnfontcolorhover);
-    /* box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35); */
+    
 }
 .btn-warning:active:focus {
     box-shadow: 0 0 0 0.25rem var(--btnactivefs);
@@ -558,11 +527,9 @@ nav .navbar .links li .sub-menu li{
 .btn-warning:active {
     background: var(--btnbghover);
     color: var(--btnfontcolorhover);
-    /* box-shadow: -1px 6px 13px rgba(255, 150, 43, 0.35); */
 }
 
 /* END BUTTON */
-
 .bg-success {
     font-size: 1rem;
     background-color: var(--btnbg)!important;
@@ -584,9 +551,7 @@ nav .navbar .links li .sub-menu li{
     font-weight: 600;
     color: darkgray;
 }
-
 .fa-question-circle:before {
-    /* content: "\f059"; */
     color: darkgray;
 }
 
@@ -620,5 +585,18 @@ nav .navbar .links li .sub-menu li{
 End of modal
 ======================================================================== */
 
-/* Style for the footer */
+/* Style for the modal button */
+
+
+.btn-yellow {
+  background-color: #ffc116;
+  border-color: #ffc116;
+  color: black; 
+}
+
+.btn-yellow:hover {
+  background-color: #ffc116; 
+  border-color: #ffc116;
+}
+
 
